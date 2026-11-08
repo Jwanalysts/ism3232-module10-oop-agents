@@ -33,7 +33,7 @@ class SupportChatbot:
         if "order" in text:
             return self.order_reply(user_message)
 
-        if "hello" in text:
+        if "hello" in text and self.model is None:
             return f"Hello! I'm {self.name}. I can check an order status for you."
 
         if self.model is not None:
