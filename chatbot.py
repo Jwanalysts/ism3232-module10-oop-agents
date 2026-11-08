@@ -2,10 +2,11 @@
 class SupportChatbot:
     """A mock support chatbot using simple rules."""
 
-    def __init__(self, name, instructions, order_tool):
+    def __init__(self, name, instructions, order_tool, model=None):
         self.name = name
         self.instructions = instructions
         self.order_tool = order_tool
+        self.model = model
         self.history = []
 
     def respond(self, user_message):
@@ -35,7 +36,17 @@ class SupportChatbot:
         if "hello" in text:
             return f"Hello! I'm {self.name}. I can check an order status for you."
 
+        if self.model is not None:
+            return self.model_reply()
+
         return "I'm not sure how to help with that. I can check an order status."
+
+
+    def model_reply(self):
+        reply = self.model.reply(self.instructions, self.history)
+        if reply is None:
+            return "Sorry, I can't answer that right now. Please try again in a moment."
+        return reply
 
     def needs_human(self, text):
         return any(word in text for word in [

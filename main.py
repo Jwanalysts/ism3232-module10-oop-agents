@@ -1,6 +1,7 @@
 
 from order_tool import OrderLookup
 from chatbot import SupportChatbot
+from mock_model import MockModel
 
 
 def main():
@@ -15,7 +16,8 @@ def main():
     bot = SupportChatbot(
         "Sunny",
         "You are a friendly customer support assistant.",
-        order_tool
+        order_tool,
+        model=MockModel()
     )
 
     messages = [
