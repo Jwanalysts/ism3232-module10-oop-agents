@@ -1,5 +1,5 @@
-from order_tool import OrderLookup
 from chatbot import SupportChatbot
+from order_tool import OrderLookup
 
 
 def make_bot():

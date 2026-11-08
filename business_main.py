@@ -1,5 +1,5 @@
-from service_tool import ServiceLookup
 from business_assistant import BusinessAssistant
+from service_tool import ServiceLookup
 
 
 def main():
