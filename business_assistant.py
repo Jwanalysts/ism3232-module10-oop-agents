@@ -1,24 +1,25 @@
-
 class BusinessAssistant:
     """A mock assistant for JW Analysts."""
 
-    def __init__(self, name, service_tool):
+    def __init__(self, name, service_tool, model=None):
         self.name = name
         self.service_tool = service_tool
+        self.model = model
+        self.instructions = (
+            "You are the JW Analysts assistant. Answer briefly. "
+            "Website development starts at $500. "
+            "Social media management starts at $300. "
+            "Only use these facts or verified service information. "
+            "If you do not know, say so and refer the customer to our team."
+        )
         self.history = []
 
     def respond(self, user_message):
-        self.history.append({
-            "role": "user",
-            "content": user_message
-        })
+        self.history.append({"role": "user", "content": user_message})
 
         reply = self.choose_reply(user_message)
 
-        self.history.append({
-            "role": "assistant",
-            "content": reply
-        })
+        self.history.append({"role": "assistant", "content": reply})
 
         return reply
 
@@ -33,6 +34,12 @@ class BusinessAssistant:
         if service is not None:
             price = self.service_tool.find_price(service)
             return f"Our {service} service starts at ${price}."
+
+        if self.model is not None:
+            reply = self.model.reply(self.instructions, self.history)
+            if reply is None:
+                return "Sorry, I can't answer that right now. Please contact our team."
+            return reply
 
         if "hello" in text:
             return f"Hello! I'm {self.name}, your JW Analysts assistant."

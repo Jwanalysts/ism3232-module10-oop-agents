@@ -22,7 +22,7 @@ def make_bot(model):
         "Sunny",
         "You are Sunny, a support assistant.",
         OrderLookup({"A100": "shipped"}),
-        model=model
+        model=model,
     )
 
 

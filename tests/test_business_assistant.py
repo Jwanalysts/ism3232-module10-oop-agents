@@ -1,4 +1,3 @@
-
 from service_tool import ServiceLookup
 from business_assistant import BusinessAssistant
 
@@ -7,7 +6,7 @@ def make_bot():
     services = {
         "website development": 500,
         "social media management": 300,
-        "business consulting": 200
+        "business consulting": 200,
     }
     tool = ServiceLookup(services)
     return BusinessAssistant("JW Assistant", tool)
