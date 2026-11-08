@@ -4,7 +4,7 @@ This project upgrades my Week 10 customer support chatbot and JW Analysts busine
 
 ## Mini-Project Reflection
 
-The model successfully answered a question about shipping time using the facts provided in its instructions. It correctly refused to invent an answer about gift wrapping because that information was not provided. However, during testing, the model incorrectly agreed that the store closed at 11 PM even though its instructions stated 7 PM. I decided to keep service prices, order statuses, stock quantities, and human handoffs in Python code because those details must remain accurate and should not depend on generated responses. The model handles general conversation while the code controls important business information.
+My JW Analysts assistant successfully answers questions about website development pricing using the service lookup tool. The AI model can also handle general customer conversations, but questions about services not covered by the instructions may need to be referred to a human representative. In my store chatbot experiment, the model incorrectly agreed that the store closed at 11 PM, even though its instructions said 7 PM. This showed me that AI-generated answers are not always reliable, even when the model has clear instructions. I kept service prices, order statuses, stock quantities, and human handoffs in Python code because those details must remain accurate. The model handles general conversation, while Python rules and tools control important business information.
 
 ## Running the Projects
 
