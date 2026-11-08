@@ -1,4 +1,3 @@
-
 from service_tool import ServiceLookup
 from business_assistant import BusinessAssistant
 
@@ -7,7 +6,7 @@ def main():
     services = {
         "website development": 500,
         "social media management": 300,
-        "business consulting": 200
+        "business consulting": 200,
     }
 
     tool = ServiceLookup(services)
@@ -19,7 +18,7 @@ def main():
         "Tell me about social media management",
         "Do you offer business consulting?",
         "Can I request a refund?",
-        "Can you help me with accounting?"
+        "Can you help me with accounting?",
     ]
 
     for message in messages:

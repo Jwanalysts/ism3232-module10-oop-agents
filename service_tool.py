@@ -1,4 +1,3 @@
-
 class ServiceLookup:
     """A tool for looking up business services."""
 

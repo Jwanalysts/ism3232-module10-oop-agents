@@ -1,4 +1,3 @@
-
 class OrderLookup:
     """A tool that knows about orders."""
 
